@@ -100,6 +100,9 @@
 .layout_r li a{
     color: #777;
 }
+.layout_r li a:hover{
+    color: #fff;
+}
 .layout_r li:first-child{
     padding-left: 0;
 }
@@ -1550,20 +1553,375 @@ float: left;
     margin-left: 50px;
     margin-top: -28px;
 }
+.channel{
+    width: 1200px;
+    height: 88px;
+    background: #fff;
+    text-align: center;
+    border-top: 0 none;
+    width: 1200px;
+    height: 88px;
+    border-radius: 10px;
+    box-shadow: 0 2px 26px rgba(0,0,0,0.07);
+    position: absolute;
+    top: 594px;
+    left: 18.5%;
+    z-index: 2;
+    margin: auto;
+}
+.channel .s1{
+    width: 271px;
+    height: 55px;
+    float: left;
+    margin-top: 20px;
+    border-right: 1px solid #ccc;
+   
+}
+.s1 img{
+    width: 52px;
+    height: 52px;
+    float: left;
+    margin-left: 20px;
+}
+.s1  .s1-n1{
+    width: 147px;
+    height: 50px;
+    float: left;
+    margin-left: 15px;
+   
+}
+.s1-n1 .s1-n1-m1{
+    width: 100%;
+    height: 21px;
+}
+.s1-n1 .s1-n1-m1 span{
+    color: #777;
+}
+.s1-n1 .s1-n1-m1 a:hover{
+    color: red;
+}
+.s1-n1  .s1-n1-m2{
+    width: 100%;
+    height: 22px;
+}
+.s1-n1  .s1-n1-m2 .list1{
+    width: 66px;
+    height: 20px;
+    line-height: 20px;
+    background: #fff;
+    border: 1px solid #e47b7f;
+    color: #de5b60;
+    margin-right: 8px;
+    border-radius: 5px;
+}
+.s1-n1  .s1-n1-m2 .list2{
+    display: inline-block;
+    width: 68px;
+    height: 22px;
+    text-align: center;
+    line-height: 22px;
+    background: #595454;
+    color: #fde4b3;
+    border-radius: 5px;
+    font-size: 13px;
+}
+.s1-n1  .s1-n1-m2 .list1:hover{
+    background-color:#e47b7f;
+    color: #f0f0f0;
+}
+.s1-n1  .s1-n1-m2 .list2:hover{
+    background-color: black;
+}
+.s2{
+    width: 660px;
+    height: 64px;
+    margin-top: 20px;
+    float: left;
+    
+}
+.s2 .saa{
+    width: 100%;
+    height: 100%;
+}
+.s2 .saa li{
+    width: 16%;
+    height: 100%;
+    float: left;
+}
+.s2 .saa li img{
+    width: 40px;
+    height: 40px;
+    margin: auto;
+}
+.s2 .saa li a{
+    color: #777;
+}
+.s2 .saa li a:hover{
+    color: red;
+}
+.s3{
+    width: 267px;
+    height: 88px;
+  
+    float: left;
+}
+.s3 .s3-nav{
+    width: 266px;
+    height: 42px;
+    
+}
+.s3-nav .s3-nav-n1{
+    width: 40px;
+    margin-left: 10px;
+    line-height: 42px;
+    float: left;
+
+}
+.s3-nav a{
+    line-height: 42px;
+    
+}
+.s3-TV{
+    width: 266px;
+    height: 42px;
+
+}
+.s3-TV .s3-TV-list{
+    width: 100%;
+    height: 100%;
+}
+.s3-TV-list li{
+    width: 33.3%;
+    height: 100%;
+    float: left;
+}
+.s3-TV-list li img{
+    width: 20px;
+    height: 20px;
+   margin-top: 13px;
+   margin-left: 10px;
+    float: left;
+}
+.s3-TV-list li a{
+    line-height: 50px;
+    font-size: 12px;
+}
+.s3-TV-list li a:hover{
+    color: red;
+}
+.main{
+    width: 1200px;
+    height: 1281px;
+    background-color: hotpink;
+    margin: auto;
+}
+ /* .left{
+    width: 284px;
+    height: 432px;
+    float: left;
+    
+}
+.left img{
+    width: 100%;
+    height: 100%;
+    margin-top: 15px;
+    margin-left: 51px;
+    
+} */
+.main .promo{
+    width: 1200px;
+    height: 200px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+.promo-list{
+    width: 100%;
+    height: 100%;
+}
+.promo-list li{
+    width: 24%;
+    height: 100%;
+    float: left;
+    margin-right: 15px;
+    border-radius: 10px;
+    transition: all .2s linear 0s;
+}
+.promo-list li img{
+    border-radius: 10px;
+}
+.promo-list li:last-child{
+    margin-right: 0px;
+}
+.promo-list li:hover {
+    box-shadow: 0 12px 36px rgba(0,0,0,0.1);
+}
+
+/* .right{
+    width: 284px;
+    height: 432px;
+    float: right;
+  
+    
+}
+.right img{
+    width: 100%;
+    height: 100%;
+    margin-top: 10px;
+    margin-left: -77px;
+  
+    
+} */
+.main .cakes{
+    width: 1200px;
+    height: 670px;
+    background-color: chartreuse;
+
+}
+.cakes .h{
+    width: 100%;
+    height: 66px;
+   
+}
+.h h2{
+    font-size: 26px;
+    color: #333;
+    padding: 27px 0 13px 0;
+}
+.cakes .k{
+    width: 100%;
+    height: 604px;
+   
+}
+.k .k-list{
+    width: 232px;
+    height: 100%;   
+    float: left;
+    transition: all .2s linear 0s;
+}
+.k-list img{
+    width: 100%;
+    height: 100%;
+   
+}
+.k .k-list:hover{
+    box-shadow: 0 12px 36px rgba(0,0,0,0.1);
+}
+.k .k-act{
+    width: 968px;
+    height: 604px;
+    
+    float: left;
+}
+.k-act .ctyr{
+    width: 100%;
+    height: 100%;
+}
+.ctyr li{
+    float: left;
+    width: 230px;
+    height: 290px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    margin-left: 12px;
+    margin-bottom: 12px;
+    margin-top: 0;
+    transition: all .2s linear 0s;
+    position: relative;
+}
+.ctyr li .tu{
+    width: 150px;
+    height: 150px;
+    margin: 35px auto 0;
+  
+}
+.ctyr li .grid-title{
+    width: 210px;
+    height: 21px;
+    width: 210px;
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+    margin-top: 12px;
+    height: 21px;
+    line-height: 21px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: center;
+}
+.ctyr li .ling{
+    width: 190px;
+    height: 18px;
+    display: inline-block;
+    color: #777;
+    line-height: 18px;
+    padding: 0 10px;
+    margin: 2px 20px 7px;
+    text-align: center;
+}
+.ctyr li .price{
+    width: 230px;
+    height: 21px;
+    color: #d0021b;
+    line-height: 21px;
+    margin-bottom: 0;
+    text-align: center;
+}
+.k-act .ctyr li:hover{
+    box-shadow: 0 12px 36px rgba(0,0,0,0.1);
+}
+.ctyr li .item-grid{
+    width: 230px;
+    height: 48px;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+.item-grid .thumb{
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+.thumb .color1{
+    display: inline-block;
+    padding: 0 9px;
+    margin: 0 auto;
+    height: 22px;
+    line-height: 22px;
+    color: #fff;
+    border-radius: 0 0 6px 6px;
+}
+.main .Boutique{
+    width: 100%;
+    height: 364px;
+    background-color: darkcyan;
+}
+.Boutique .h{
+    width: 100%;
+    height: 53px;
+}
+.Boutique .h h2{
+    font-size: 26px;
+    color: #333;
+    padding: 27px 0 0 0;
+    line-height: 1;
+}
+.Boutique .b{
+    width: 100%;
+    height: 311px;
+    background-color: darkgoldenrod;
+}
 
 
 
 
 
 
-
-
-
-
-
-
-
-
+ 
 
 
 

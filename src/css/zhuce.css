@@ -1,0 +1,227 @@
+.heard{
+    background-color:#333;
+    height: 67px;
+    min-width: 960px;
+}
+.center{
+    width: 960px;
+    height: 67px;
+    margin: 0 auto;
+    border: 0;
+    position: relative;
+
+}
+.center img{
+    width: 280px;
+    height: 40px;
+    float: left;
+    margin-top: 16px;
+}
+.box{
+    width: 100%;
+    height: 854px;
+    background: #f2f2f2;
+}
+.box .main{
+    margin: 0 auto;
+    padding-top: 30px;
+    width: 960px
+}
+.reg{
+    width: 960px;
+    height: 35px; 
+    position: relative;
+   
+}
+.reg .phone{
+    display: block;
+    width: 146px;
+    height: 35px;
+    background: #b40707;
+    position: relative;
+    margin-right: 12px;
+    float: left;
+}
+.phone span{
+    display: inline-block;
+    font-size: 25px;
+    margin-left:  20px;
+    padding-top: 5px;
+    color: #fff;
+    float: left;
+    
+}
+.phone p{
+    float: left;
+    margin-top: 8px;
+    margin-left: 12px;
+    color: #fff;
+    font-weight: bolder;
+}
+.email{
+    display: block;
+    width: 146px;
+    height: 35px;
+    background: #ccc;
+    position: relative;
+    float: left;
+}
+.email span{
+    display: inline-block;
+    font-size: 25px;
+    margin-left:  20px;
+    padding-top: 5px;
+    color: #fff;
+    float: left;
+    
+}
+.email p{
+    float: left;
+    margin-top: 8px;
+    margin-left: 12px;
+    color: #fff;
+    font-weight: bolder;
+}
+.reg-r{
+    width: 144px;
+    height: 14px;
+    float: right;
+ 
+}
+.reg-r p{
+    font-size: 14px;
+}
+.reg-r a{
+    margin-left: 10px;
+    color: blue;
+}
+.register{
+    width: 960px;
+    height: 670px;
+    font-size: 14px;
+    color: #333;
+    background: #fff;
+    position: relative;
+}
+.register-nav{
+    width: 420px;
+    height: 570px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    
+}
+.register-nav .nav-title{
+    width: 420px;
+    height: 52px;
+    text-align: center;
+    margin: 10px 0 30px;
+}
+.nav-title h2{
+    font-size: 24px;
+}
+.nav-title p{
+    font-size: 16px;
+    margin-top: 3px;
+    color: #999;
+}
+
+.register-nav .container{
+    width: 420px;
+    height: 44px;
+    margin-top: 20px;
+    background: #f7f7f7;
+    height: 42px;
+    border: 1px solid #d9d9d9;
+    border-radius: 21px;
+    position: relative;
+}
+.container-left{
+    width: 123px;
+    height: 42px;
+    text-align: justify;
+    text-align-last: justify;
+    line-height: 42px;
+    padding: 0 16px;
+    border-right: 1px solid #d9d9d9;
+    float: left;
+    
+}
+.container .input-1{
+    width: 60%;
+    height: 100%;
+    background-color:  #f7f7f7;
+    margin-left: 10px;
+}
+.container .input-2{
+    width: 60%;
+    height: 100%;
+    background-color:  #f7f7f7;
+    margin-left: 10px;
+}
+.container .input-3{
+    width: 60%;
+    height: 100%;
+    background-color:  #f7f7f7;
+    margin-left: 10px;
+}
+.container .input-4{
+    width: 60%;
+    height: 100%;
+    background-color:  #f7f7f7;
+    margin-left: 10px;
+}
+.container .input-5{
+    width: 60%;
+    height: 100%;
+    background-color:  #f7f7f7;
+    margin-left: 10px;
+}
+.container .input-6{
+    width: 60%;
+    height: 100%;
+    background-color:  #f7f7f7;
+    margin-left: 10px;
+}
+
+.reg-btn{
+    width: 420px;
+    height: 40px;
+    margin-top: 30px;
+    text-align: center;
+   
+}
+.reg-btn .btn-set{
+    width: 200px;
+    height: 40px;
+    cursor: pointer;
+    background-color: #b40707;
+    border: 0;
+    color: #fff;
+    border-radius: 20px;
+}
+
+.main-nav{
+    width: 960px;
+    height: 41px;
+    margin: auto;
+    border-bottom: 1px solid #d7d7d7;
+    text-align: center;
+    background: #f2f2f2;
+}
+.footer{
+    width: 906px;
+    height: 48px;
+    margin: auto;
+    margin-top: 20px;
+    text-align: center;
+   
+}
+.footer .footer-p1 em{
+    margin: 0 10px;
+}
+
+
