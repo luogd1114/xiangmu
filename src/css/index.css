@@ -3465,13 +3465,13 @@ float: left;
     right: 0;
     bottom: 0;
     margin:  auto;  
-    background-color: #FF6A6E;
+  
 }
 .server-nav .server-nav-1{
     width: 921px;
     height: 100%;
     float: left;
-    background-color: yellow;
+ 
 }
 .server-nav-1 ul{
     width: 100%;
@@ -3500,6 +3500,194 @@ float: left;
     width: 278px;
     height: 100%;
     float: left;
-    background-color: goldenrod
+   
+}
+.server-nav-2 .nav-2-list1{
+    width: 100%;
+    height: 102px;
+    float: left;
+   
+}
+.nav-2-list1 .title{
+    font-size: 24px!important;
+    padding: 0;
+    color: #575757;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.5!important;
+    margin-bottom: 0!important;
+
+}
+.nav-2-list1 .title-p{
+    text-align: center;
+    margin-bottom: 10px;
+}
+.nav-2-list1 .title-p a{
+    color: #333;
+}
+.server-nav-2 .nav-2-list2{
+    width: 170px;
+    height: 34px;
+    background: #333;
+    margin-left: 58px;
+    border-radius: 20px;
+    text-align: center;
+    position: relative;
+    line-height: 34px;
+    color: #fff;
+}
+.nav-2-list2 img{
+    height: 20px;
+    width: 20px;
+    margin-left: 6px;
+    vertical-align: middle;
+    position: absolute;
+    top: 7px;
+    left: 28px;
+    float: left;
+}
+.server-nav-2 .nav-2-list2:hover{
+    background-color: #777;
+}
+.server-nav-2 .nav-2-code{
+    width: 250px;
+    height: 24px;
+    float: left;
+    width: 250px;
+    margin-top: 26px;
+    margin-left: 40px;
+ 
+}
+.nav-2-code h4{
+    width: 77px;
+    height: 22px;
+    font-size: 14px;
+    color: #333;
+    float: left;
+    line-height: 22px;
+}
+.nav-2-code ul{
+    width: 140px;
+    height: 24px;
+    float: left;
+    margin-left: 3px;
+}
+.nav-2-code ul li{
+    float: left;
+    width: 24px;
+    height: 24px;
+    margin-right: 11px;
+    position: relative;
+    float: left;
+}
+.nav-2-code ul li:nth-child(1) .weixin{
+    display: none;
+    position: absolute;
+    top: 30px;
+    left: -50px;
+    background: #fff;
+    width: 120px;
+    height: 120px;
+    box-shadow: 0 1px 5px rgba(158,158,158,0.6);
+}
+.nav-2-code ul li:nth-child(1) .weixin img{
+    width: 108px;
+    height: 108px;
+    vertical-align: top;
+    margin: 6px;
+
+}
+.nav-2-code ul li:nth-child(1):hover  .weixin{
+    display: block;
 }
 
+.footer{
+    background: #F9F9F9;
+    width: 100%;
+    min-width: 1200px;
+    height: 114px;
+    position: relative;
+}
+.footer .footer-bot{
+    width: 1200px;
+    height: 61px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin:  auto;
+    color: #666;
+    line-height: 1.5;
+    
+}
+.footer-bot .warrant-logo{
+    width: 82px;
+    height: 20px;
+    padding: 3px 20px 0 0;
+    float: left;
+}
+.warrant-logo img{
+    vertical-align: top;
+    width: 82px;
+    height: 20px;
+    margin-top: 20px;
+}
+.footer-bot .f1{
+    width: 736px;
+    height: 61px;
+
+    float: left;
+}
+.f1  .warrant-link{
+    margin-top: 3px;
+    margin-bottom: 6px;
+    width: 100%;
+
+}
+.warrant-link li{
+    float: left;
+    line-height: 1;
+    padding-right: 6px;
+    border-right: 1px solid #d3d3d3;
+    margin-right: 6px;
+    cursor: pointer;
+
+}
+.warrant-link li a{
+    color: #777;
+    font-size: 12px;
+}
+.warrant-link li:last-child {
+    margin-right: 0;
+    border-right: none;
+}
+.warrant-link li a:hover{
+    color: red;
+}
+.f1 a {
+    color: #a4a4a4;
+    line-height: 20px;
+    cursor: pointer;
+    font-size: 12px;
+}
+.f1 a:nth-of-type(1):hover{
+    color: red;
+}
+.f1 a:nth-of-type(2):hover{
+    color: red;
+}
+.f1 a:nth-of-type(3):hover{
+    color: red;
+}
+.f1 a:nth-of-type(8):hover{
+    color: red;
+}
+.f1 a:nth-of-type(9):hover{
+    color: red;
+}
+.footer-bot  .footer-warrant-img{
+    float: right;
+    width: 87px;
+    height: 24px;
+}

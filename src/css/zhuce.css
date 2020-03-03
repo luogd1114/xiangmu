@@ -139,6 +139,14 @@
     border-radius: 21px;
     position: relative;
 }
+input.error{
+    border: 1px solid red;
+}
+label.error {
+    color: red;
+    display: block;
+    font-size: 10px;
+  }
 .container-left{
     width: 123px;
     height: 42px;
@@ -194,7 +202,7 @@
     text-align: center;
    
 }
-.reg-btn .btn-set{
+.reg-btn .btn{
     width: 200px;
     height: 40px;
     cursor: pointer;

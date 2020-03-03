@@ -36,41 +36,45 @@
             </div>
 
             <div class="register">
-                <div class="register-nav">
-                    <div class="nav-title">
-                        <h2>注册华为账号</h2>
-                        <p>用于访问所有华为终端云服务</p>
-                    </div>
+                <form action="POST" id="login">
+                    <div class="register-nav">
+                        <div class="nav-title">
+                            <h2>注册华为账号</h2>
+                            <p>用于访问所有华为终端云服务</p>
+                        </div>
 
-                    <div class="container">
-                        <div class="container-left">国家 / 地区</div>
-                        <input type="text" id="nation" name="nation" class="input-1" placeholder="请输入您的国家地区">
-                    </div>
-                    <div class="container">
-                        <div class="container-left">+（86）中国</div>
-                        <input type="text" id="Mobile" name="Mobile" class="input-2" placeholder="输入你的手机号码">
-                    </div>
-                    <div class="container">
-                        <div class="container-left">短信码验证</div>
-                        <input type="text" id="Mobile" name="Mobile" class="input-3" placeholder="请输入短信验证码">
-                    </div>
-                    <div class="container">
-                        <div class="container-left">密码</div>
-                        <input type="text" id="password" name="password" class="input-4" placeholder="请输入密码">
-                    </div>
-                    <div class="container">
-                        <div class="container-left">确认密码</div>
-                        <input type="text" id="password" name="password" class="input-5" placeholder="请再次输入密码">
-                    </div>
-                    <div class="container">
-                        <div class="container-left">出生日期</div>
-                        <input type="text" id="password" name="password" class="input-6" placeholder="请正确填写出生日期">
-                    </div>
+                        <div class="container">
+                            <div class="container-left">国家 / 地区</div>
+                            <input type="text" id="nation" name="nation" class="input-1" placeholder="请输入您的国家地区">
+                        </div>
+                        <div class="container">
+                            <div class="container-left">+（86）中国</div>
+                            <input type="text" id="region" name="region" class="input-2" placeholder="输入你的手机号码">
+                        </div>
+                        <div class="container">
+                            <div class="container-left">短信码验证</div>
+                            <input type="text" id="note" name="note" class="input-3" placeholder="请输入短信验证码">
+                        </div>
+                        <div class="container">
+                            <div class="container-left">密码</div>
+                            <input type="text" id="password" name="password" class="input-4" placeholder="请输入密码">
+                        </div>
+                        <div class="container">
+                            <div class="container-left">确认密码</div>
+                            <input type="text" id="affirm" name="affirm" class="input-5" placeholder="请再次输入密码">
+                        </div>
+                        <div class="container">
+                            <div class="container-left">出生日期</div>
+                            <input type="text" id="birth " name="birth " class="input-6" placeholder="请正确填写出生日期">
+                        </div>
 
-                    <div class="reg-btn">
-                            <input type="button" value="注册" class="btn-set" id="btnSubmit">
+                        <div class="reg-btn">
+                            <!-- <input type="button" value="注册" class="btn" id="btnSubmit"> -->
+                            <button class="btn">注册</button>
+                        </div>
                     </div>
-                </div>
+                </form>
+
             </div>
 
         </div>
@@ -85,9 +89,98 @@
                 <em>|</em>
                 <a href="">Cookies</a>
             </p>
-            <p class="footer-p2">Copyright @ 2011-2019&nbsp;华为软件技术有限公司&nbsp;版权所有&nbsp;保留一切&nbsp;苏B2-2007020&nbsp;苏ICP备09062682号9</p>
+            <p class="footer-p2">Copyright @
+                2011-2019&nbsp;华为软件技术有限公司&nbsp;版权所有&nbsp;保留一切&nbsp;苏B2-2007020&nbsp;苏ICP备09062682号9</p>
         </div>
     </div>
+
+  
+    <script src="../lib/jquery/dist//jquery.min.js"></script>
+    <script src="../lib/jquery-validate/jquery.validate.min.js"></script>
+    <script src="../lib/jquery-validate/localization/messages_zh.min.js"></script>
+    <!-- <script src="../js/zhuce.js"></script> -->
+
+
+    <script>
+
+        $('#login').validate({
+            rules: {
+                username: 'required',
+                password: {
+                    required: true,
+                    minlength: 6,
+                    maxlength: 11,
+                },
+                dateISO: "请输入有效的日期 (YYYY-MM-DD)",
+            },
+
+            massagea: {
+                username: '用户名不能为空',
+                password: {
+                    required: true,
+                    minlength: '密码不能少于6位数'
+                },
+              
+            },
+        })
+
+
+        var nation = document.querySelector('#nation');
+        var  region = document.querySelector('#region');
+        var  note = document.querySelector('#note');
+        var  password = document.querySelector('#password');
+        var  affirm = document.querySelector('#affirm');
+        var birth  = document.querySelector('#birth ');
+
+        $('.btn').click((e) => {
+            e = e || window.event;
+            e.preventDefault();
+
+            var Nat = nation.value;
+            var Reg = region.value;
+            var Not = note.value;
+            var pass = password.value;
+            var aff = affirm.value;
+            var Bir = birth.value;
+
+            var xhr = new XMLHttpRequest();
+
+            xhr.open('post', 'http://localhost/server/cart.php');
+
+            xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
+
+            xhr.onload = function () {
+                var res = JSON.parse(xhr.responseText)
+                if (res.code === 1) {
+                    window.location.href = './index.html'
+                }
+            }
+
+            xhr.send( `nation=${Nat}&region=${Reg}&note=${Not}&password=${pass}&birth=${Bir}&affirm=${aff}`);
+
+        })
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
 
 </body>
 

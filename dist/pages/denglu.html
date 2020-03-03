@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Document</title><link rel=stylesheet href=../css/denglu.css><link rel=stylesheet href=../css/common.css></head><body><div class=box><div class=top></div><ul><li class=active>账号登录</li><li>扫码登录</li></ul><div class=nav1><form action="" id=login><div class=nav1-p><input type=text name=username id=username style=border:0;height:40px;width:100% placeholder=手机号/邮箱/华为账号></div><div class=nav2-p><input type=text name=password id=password style=border:0;height:40px;width:100% placeholder=密码></div><p><a href="">短信手机验证码登录</a></p><button class=btn>登录</button><div class=nav-3><a href="">注册账号</a><span>|</span> <a href="">忘记密码?</a><span>|</span> <a href="">更多</a></div></form></div><div class=nav2><img src=../images/erweima.png alt=""><p><span>使用</span><a href="">华为移动服务APP</a><em>扫一扫</em></p><p>若你是使用华为手机，请进入"设置">"华为账号手机扫码登录"</p></div></div><script src=../lib/jquery/dist/jquery.min.js></script><script src=../lib/jquery-validate/jquery.validate.min.js></script><script src=../lib/jquery-validate/localization/messages_zh.min.js></script><script>$('ul>li').click(function () {
+<!DOCTYPE html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Document</title><link rel=stylesheet href=../css/denglu.css><link rel=stylesheet href=../css/common.css></head><body><div class=box><div class=top></div><ul><li class=active>账号登录</li><li>扫码登录</li></ul><div class=nav1><form action=POST id=login><div class=nav1-p><input type=text name=username id=username style=border:0;height:40px;width:100% placeholder=手机号/邮箱/华为账号></div><div class=nav2-p><input type=text name=password id=password style=border:0;height:40px;width:100% placeholder=密码></div><p><a href="">短信手机验证码登录</a></p><button class=btn>登录</button><div class=nav-3><a href=../pages/zhuce.html>注册账号</a><span>|</span> <a href="">忘记密码?</a><span>|</span> <a href="">更多</a></div></form></div><div class=nav2><img src=../images/erweima.png alt=""><p><span>使用</span><a href="">华为移动服务APP</a><em>扫一扫</em></p><p>若你是使用华为手机，请进入"设置">"华为账号手机扫码登录"</p></div></div><script src=../lib/jquery/dist/jquery.min.js></script><script src=../lib/jquery-validate/jquery.validate.min.js></script><script src=../lib/jquery-validate/localization/messages_zh.min.js></script><script>$('ul>li').click(function () {
             if ($(this).index() === 0) {
                 $('.nav2').hide().prev().show()
                 $(this).addClass('active').siblings().removeClass('active')
@@ -8,7 +8,6 @@
                 $(this).addClass('active').siblings().removeClass('active')
             }
         })
-
 
 
         $('#login').validate({
@@ -30,18 +29,36 @@
                 }
             },
 
-            submitHandler: function (form) {
-                $.post('./login.php', $(form).serialize(), res => {
-                    console.log(res)
-                }, 'json')
+           
+
+        })
+
+        var Inpname = document.querySelector('#username')
+        var Inppsd = document.querySelector('#password')
+        $('.btn').click((e) => {
+            e = e || window.event
+            e.preventDefault()
+            var uname = Inpname.value
+            var upsd = Inppsd.value
+
+            
+            var xhr = new XMLHttpRequest();
+
+            xhr.open('post', 'http://localhost/server/login.php')
+
+
+            xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded')
+
+
+
+            xhr.onload = function () {
+                var res = JSON.parse(xhr.responseText)
+                if (res.code === 1) {
+                    window.location.href = './index.html'
+                }
             }
 
-            // $('.btn').click(()=>{
-            //     $.ajax({
-            //         url:'./login.php',
-            //         data:{username:$('username').value,password:$('password').value},
-            //         dataType:'json',
-            //         success:function(res){console.log(res)}
-            //     })
-            // })
+            xhr.send(`username=${uname}&password=${upsd}`)
+
+
         })</script></body></html>

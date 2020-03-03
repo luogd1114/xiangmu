@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>test</button>
+    <script src="../lib/jquery/dist/jquery.min.js"></script>
+    <script>
+        $('button').click(function(){
+            $.ajax({
+                    url:'http://localhost/server/login.php',
+                    type:'post',
+                    dataType:'json',
+                    data:{
+                        username:'luoguoding',
+                        password:'123456789',
+                        dataType:'json'
+                    },
+                    success:function(res){
+                        if(res.code === 1){
+                            window.location.href='./index.html'
+                        }
+                    }
+                })
+        })
+    </script>
+</body>
+</html>
