@@ -43,33 +43,13 @@
                             <p>用于访问所有华为终端云服务</p>
                         </div>
 
-                        <div class="container">
-                            <div class="container-left">国家 / 地区</div>
-                            <input type="text" id="nation" name="nation" class="input-1" placeholder="请输入您的国家地区">
+                        <div class="container">                         
+                            <input type="text" id="username" name="username" class="input-1" placeholder="请输入你的用户名">
                         </div>
                         <div class="container">
-                            <div class="container-left">+（86）中国</div>
-                            <input type="text" id="region" name="region" class="input-2" placeholder="输入你的手机号码">
-                        </div>
-                        <div class="container">
-                            <div class="container-left">短信码验证</div>
-                            <input type="text" id="note" name="note" class="input-3" placeholder="请输入短信验证码">
-                        </div>
-                        <div class="container">
-                            <div class="container-left">密码</div>
-                            <input type="text" id="password" name="password" class="input-4" placeholder="请输入密码">
-                        </div>
-                        <div class="container">
-                            <div class="container-left">确认密码</div>
-                            <input type="text" id="affirm" name="affirm" class="input-5" placeholder="请再次输入密码">
-                        </div>
-                        <div class="container">
-                            <div class="container-left">出生日期</div>
-                            <input type="text" id="birth " name="birth " class="input-6" placeholder="请正确填写出生日期">
-                        </div>
-
-                        <div class="reg-btn">
-                            <!-- <input type="button" value="注册" class="btn" id="btnSubmit"> -->
+                            <input type="text" id="password" name="password" class="input-2" placeholder="请输入你的密码">
+                        </div>                     
+                        <div class="reg-btn">                         
                             <button class="btn">注册</button>
                         </div>
                     </div>
@@ -111,7 +91,7 @@
                     minlength: 6,
                     maxlength: 11,
                 },
-                dateISO: "请输入有效的日期 (YYYY-MM-DD)",
+                
             },
 
             massagea: {
@@ -125,43 +105,55 @@
         })
 
 
-        var nation = document.querySelector('#nation');
-        var  region = document.querySelector('#region');
-        var  note = document.querySelector('#note');
-        var  password = document.querySelector('#password');
-        var  affirm = document.querySelector('#affirm');
-        var birth  = document.querySelector('#birth ');
+        // var Inpname = document.querySelector('#username')
+        // var Inppsd = document.querySelector('#password')
+        // $('.btn').click((e) => {
 
-        $('.btn').click((e) => {
-            e = e || window.event;
-            e.preventDefault();
+        //     e = e || window.event;
+        //     e.preventDefault();
 
-            var Nat = nation.value;
-            var Reg = region.value;
-            var Not = note.value;
-            var pass = password.value;
-            var aff = affirm.value;
-            var Bir = birth.value;
+        //     var uname = Inpname.value
+        //     var upsd = Inppsd.value
 
-            var xhr = new XMLHttpRequest();
+        //     var xhr = new XMLHttpRequest();
 
-            xhr.open('post', 'http://localhost/server/cart.php');
+        //     xhr.open('post', 'http://localhost/server/cart.php');
 
-            xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
+        //     xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
 
-            xhr.onload = function () {
-                var res = JSON.parse(xhr.responseText)
-                if (res.code === 1) {
-                    window.location.href = './index.html'
+        //     xhr.onload = function () {
+        //         var res = JSON.parse(xhr.responseText)
+        //         if (res.code === 1) {
+        //             window.location.href = './index.html'
+        //         }
+        //     }
+
+        //     xhr.send(`username=${uname}&password=${upsd}`)
+        // })
+
+
+        let user = document.querySelector("#username")
+        let pass = document.querySelector("#password")
+        $('button').click(() => {
+            console.log(user.value)
+            console.log(pass.value)
+            $.ajax({
+                url: '/cart',
+                type: 'post',
+                data: {
+                    username: user.value,
+                    password: pass.value
+                },
+                // dataType: 'json',
+                success: function (res) {
+                    console.log(res)
+                    if (res.code === 1) {
+                        window.location.href = "./index.html";
+                    }
+
                 }
-            }
-
-            xhr.send( `nation=${Nat}&region=${Reg}&note=${Not}&password=${pass}&birth=${Bir}&affirm=${aff}`);
-
+            })
         })
-
-
-
 
 
 
