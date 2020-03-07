@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../css/common.css">
-    <link rel="stylesheet" href="../css/zhuce.css">
-    <link rel="stylesheet" href="../font_icon/iconfont.css">
+    <link rel="stylesheet" href="../css/zhuce.css">  
+    <link rel="stylesheet" href="/dist/font_icon/iconfont.css">
     <link rel="stylesheet" href="../lib/bootstrap/dist/css/bootstrap.min.css">
 </head>
 
@@ -105,55 +105,64 @@
         })
 
 
-        // var Inpname = document.querySelector('#username')
-        // var Inppsd = document.querySelector('#password')
-        // $('.btn').click((e) => {
+        var Inpname = document.querySelector('#username')
+        var Inppsd = document.querySelector('#password')
+        $('.btn').click((e) => {
+
+            e = e || window.event;
+            e.preventDefault();
+
+            var uname = Inpname.value
+            var upsd = Inppsd.value
+
+            var xhr = new XMLHttpRequest();
+
+            xhr.open('post', 'http://localhost/server/cart.php');
+
+            xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
+
+            xhr.onload = function () {
+                var res = JSON.parse(xhr.responseText)
+                console.log(res);
+                
+                if (res.code === 1) {
+                    alert(res.message)
+                    window.location.href = './index.html'
+                }else if(res.code === 0){
+                    alert(res.message)
+                    window.location.href = './denglu.html'
+                }
+            }
+
+            xhr.send(`username=${uname}&password=${upsd}`)
+        })
+
+
+        // let user = document.querySelector("#username")
+        // let pass = document.querySelector("#password")
+        // $('button').click(() => {
+        //     console.log(user.value)
+        //     console.log(pass.value)
 
         //     e = e || window.event;
         //     e.preventDefault();
+        //     $.ajax({
+        //         url: '/cart',
+        //         type: 'post',
+        //         data: {
+        //             username: user.value,
+        //             password: pass.value
+        //         },
+        //         // dataType: 'json',
+        //         success: function (res) {
+        //             console.log(res)
+        //             if (res.code === 1) {
+        //                 window.location.href = "./index.html";
+        //             }
 
-        //     var uname = Inpname.value
-        //     var upsd = Inppsd.value
-
-        //     var xhr = new XMLHttpRequest();
-
-        //     xhr.open('post', 'http://localhost/server/cart.php');
-
-        //     xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
-
-        //     xhr.onload = function () {
-        //         var res = JSON.parse(xhr.responseText)
-        //         if (res.code === 1) {
-        //             window.location.href = './index.html'
         //         }
-        //     }
-
-        //     xhr.send(`username=${uname}&password=${upsd}`)
+        //     })
         // })
-
-
-        let user = document.querySelector("#username")
-        let pass = document.querySelector("#password")
-        $('button').click(() => {
-            console.log(user.value)
-            console.log(pass.value)
-            $.ajax({
-                url: '/cart',
-                type: 'post',
-                data: {
-                    username: user.value,
-                    password: pass.value
-                },
-                // dataType: 'json',
-                success: function (res) {
-                    console.log(res)
-                    if (res.code === 1) {
-                        window.location.href = "./index.html";
-                    }
-
-                }
-            })
-        })
 
 
 

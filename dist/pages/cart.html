@@ -1,0 +1,56 @@
+<!DOCTYPE html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Document</title><link rel=stylesheet href=../css/common.css><link rel=stylesheet href=../css/cart.css></head><body><div class=list><div class=title-top><ul><li>商品</li><li>单价</li><li>数量</li><li>小计</li><li>操作</li></ul></div><div class=nav><label class=checkbox><input type=text class="vam checked"></label><div class=area><div class=main><p class=p-img><img src="" alt=""></p><ul class=goods><li><p class=p-nam>HUAWEI Mate 30 Pro 麒麟990 双4000万徕卡电影四摄 4G全网通 8GB+128GB（亮黑色）</p><p class=p-info>亮黑色 4G全网通 8GB+128GB 官方标配</p></li><li><span class=p-price>¥ 5399.00</span></li><li><div class=p-stock><input type=text value=1 class=text-top><p class=p-btn><a href="">-</a> <a href="">+</a></p></div></li><li class=total>¥ 5399.00</li><li><a href="" class=del>删除</a></li></ul></div></div></div></div><script src=../lib/jquery/dist/jquery.min.js></script><script>const cartList = JSON.parse(localStorage.getItem('cartList'))
+         console.log(cartList);
+         
+        if (!cartList) {
+            alert('您的购物车为空, 快去选购把')
+        } else {
+            // 3. 渲染页面
+            bindHtml()
+
+            // 4. 添加各种事件
+            // bindEvent()
+        }
+        function bindHtml() {
+            let selectAll = cartList.every(item => {
+                return item.isSelect === true
+            })
+
+            let str = `
+            <label class="checkbox">
+                <input  type="text" class="vam" ${ selectAll ? 'checked' : ''}>全选
+            </label>
+            `
+
+            cartList.forEach(item => {
+                str += `
+                <div class="main">
+                    <p class="p-img">
+                        <img src="${ item.img }" alt="">
+                    </p>
+                    <ul class="goods">
+                        <li>
+                            <p class="p-nam">${ item.title }</p>
+                            <p class="p-info">${ item.c9 }</p>
+                        </li>
+                        <li>
+                            <span class="p-price">${ item.p }</span>
+                        </li>
+                        <li>
+                            <div class="p-stock">
+
+                                <input type="text" value="${ item.number }" class="text-top">
+                                <p class="p-btn">
+                                    <a href="" data-id=${ item.id } >-</a>
+                                    <a href="" data-id=${ item.id } >+</a>
+                                </p>
+
+                            </div>
+                        </li>
+                        <li class="total">${ item.p }</li>
+                        <li><a href="" class="del" data-id=${ item.id }>删除</a></li>
+                    </ul>
+                </div>
+            `
+            })
+            $('.main').html(str)
+        }</script></body></html>
